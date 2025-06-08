@@ -14,5 +14,14 @@ Generic Java library to convert XML data to JSON via POJO classes using the Adap
 ## Usage
 
 ```java
-AdapterXmlToJson<User> adapter = new AdapterXmlToJson<>(User.class);
-String json = adapter.convertXmlToJson(xmlData);
+        String xml = """
+                <User>
+                    <name>Doğukan</name>
+                    <age>25</age>
+                    <active>true</active>
+                </User>
+                """;
+
+        AdapterXmlToJson<User> adapter = new AdapterXmlToJson<>(User.class);
+        String json = adapter.convertXmlToJson(xml);
+        System.out.println(json);
